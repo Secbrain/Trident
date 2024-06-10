@@ -35,7 +35,7 @@ evt.py
 
 ## Demo Dataset
 
-A demo of the demo dataset based on KDDCup 99 is stored in ./code/data_loader.py. 
+A demo dataset based on KDDCup 99 is stored in ./code/data_loader.py. 
 ```bash
 data_loader.py
 ```
@@ -46,6 +46,14 @@ To perform this test code, enter the ./code/ folder, run with
 ```bash
 python main_process.py
 ```
+
+## How to Configure Other Models
+
+For sequence-based models, user can configure recurrent neural networks, could refer to [I2RNN](https://ieeexplore.ieee.org/abstract/document/10056861/) and [Seq2Seq](https://proceedings.neurips.cc/paper/2014/hash/a14ac55a4f27472c5d894ec1c3c743d2-Abstract.html) architectures. 
+For the graph-based model, [Graph U-Nets](https://proceedings.mlr.press/v97/gao19a.html) could be used to construct the reconstruction loss of graph data. 
+Particularly, RNN and GNN models require corresponding feature processing. 
+
+**Note**: the scenario for this sample code is that one emerging class appears in the data stream each time. When considering multiple new classes appearing simultaneously, further clustering is only required in the buffer pool (corresponding to *res_ls* in *main_process.py*). For the ensemble of multiple clusters, could refer to [FARE](https://www.ndss-symposium.org/ndss-paper/fare-enabling-fine-grained-attack-categorization-under-low-quality-labeled-data/). 
 
 ### References
 - [New Directions in Automated Traffic Analysis](https://doi.org/10.1145/3460120.3484758), 	Jordan Holland, Paul Schmitt, Nick Feamster, Prateek Mittal - CCS 2021
